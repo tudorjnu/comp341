@@ -42,7 +42,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
-## install dependencies, create a virtual environment and install mujoco-py
+## Install dependencies, create a virtual environment and install mujoco-py
 
 ```
 # install dependencies
@@ -91,6 +91,13 @@ print(sim.data.qpos)
 #  -3.04253586e-04 -2.07559344e-04 -8.50646247e-05  1.11317030e-04
 #  -7.03465386e-05 -2.22862221e-05 -1.11317030e-04  7.03465386e-05
 #  -2.22862221e-05]
+```
+
+## Install OpenAI Gym
+
+```
+# make sure the virtual env is activated
+pip install gym
 ```
 
 
