@@ -124,7 +124,7 @@ brew install hdf5
 ````
 
 ## Create a virtual environment and install mujoco-py
-
+```
 # create a virtual environment
 # syntax goes as: conda create -n <env-name> <module>=<version>
 conda create -n comp341 python=3.9
