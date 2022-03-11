@@ -36,7 +36,7 @@ echo 'export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin:${LD_LIBRARY_PATH}' >> ~/.b
 echo 'export LD_LIBRARY_PATH=/usr/lib/nvidia:${LD_LIBRARY_PATH}' >> ~/.bashrc 
 ```
 
-### MAC
+### MacOSX
 Open a terminal and check what shell are you using by searching ```.bashrc/.zshrc```.
 ```
 # make mujoco directory
