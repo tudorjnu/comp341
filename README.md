@@ -51,8 +51,9 @@ wget https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-macos-
 
 Now we have to add those to the PATH by opening the ```.bashrc/.zshrc```
 
-# Add this to your .bashrc/.zshrc:
+
 ```
+# Add this to your .bashrc/.zshrc:
 export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin:${LD_LIBRARY_PATH}
 
 export PATH="/usr/local/opt/llvm/bin:$PATH"
