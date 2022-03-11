@@ -7,10 +7,13 @@ Open a terminal on Windows (PowerShell) and execute the following:
 wsl --install
 ```
 
-Restart the computer
+Restart the computer and configure the username & password.
+Open Ubuntu from the start menu.
 
 
-## Install MuJoCo on WSL
+## Install MuJoCo
+
+### WSL
 
 Within WSL and using bash, run the following:
 
@@ -33,8 +36,41 @@ echo 'export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin:${LD_LIBRARY_PATH}' >> ~/.b
 echo 'export LD_LIBRARY_PATH=/usr/lib/nvidia:${LD_LIBRARY_PATH}' >> ~/.bashrc 
 ```
 
+### MAC
+Open a terminal and check what shell are you using by searching ```.bashrc/.zshrc```.
+```
+# make mujoco directory
+mkdir ~/.mujoco
+
+# switch to mujoco dir
+cd .mujoco/
+
+# download and unzip mujoco
+wget https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-macos-x86_64.tar.gz
+```
+
+Now we have to add those to the PATH by opening the ```.bashrc/.zshrc```
+
+# Add this to your .bashrc/.zshrc:
+```
+export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin:${LD_LIBRARY_PATH}
+
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+export CC="/usr/local/opt/llvm/bin/clang"
+export CXX="/usr/local/opt/llvm/bin/clang++"
+export CXX11="/usr/local/opt/llvm/bin/clang++"
+export CXX14="/usr/local/opt/llvm/bin/clang++"
+export CXX17="/usr/local/opt/llvm/bin/clang++"
+export CXX1X="/usr/local/opt/llvm/bin/clang++"
+
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+```
+
 ## Install Miniconda to not tinker with the system libraries (click yes when you are prompted)
 
+### WSL
 ```
 # download 
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -42,11 +78,51 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
-## Install dependencies, create a virtual environment and install mujoco-py
+### MacOSX
+
+#### BASH
+```
+cd ~/Downloads
+
+# M1 chip
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+
+# normal
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+
+# install it
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+
+#### Mac Package
+```
+cd ~/Downloads
+
+# download
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg
+```
+
+
+
+
+## Install dependencies
+
+### WSL
 
 ```
 # install dependencies
 sudo apt install libosmesa6-dev libgl1-mesa-glx libglfw3
+```
+
+### MacOSX
+```
+# install dependencies
+brew install llvm
+brew install boost
+brew install hdf5
+````
+
+## Create a virtual environment and install mujoco-py
 
 # create a virtual environment
 # syntax goes as: conda create -n <env-name> <module>=<version>
