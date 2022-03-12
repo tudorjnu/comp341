@@ -15,8 +15,6 @@ Open Ubuntu from the start menu.
 
 ### WSL
 
-Try disabling the firewall and the antivirus, they might block the WSL internet connection.
-
 Within WSL and using bash, run the following:
 
 ```
