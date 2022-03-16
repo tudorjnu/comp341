@@ -10,6 +10,14 @@ wsl --install
 Restart the computer and configure the username & password.
 Open Ubuntu from the start menu.
 
+Give an update to the system by runing:
+
+```
+sudo apt update && sudo apt -y upgrade
+sudo apt-get update && sudo apt-get upgrade
+```
+
+Install from windows apps `GWSL`. This will allow you to run graphical apps within `WSL`.
 
 ## Install MuJoCo
 
