@@ -133,7 +133,7 @@ In order to move the joints, we need to actuate them. This is done by adding an 
 There are several MJCF examples available within the repository along with some Python example. In order to get them, simply run the following command within the folder where you want to put them or download them manually from [here](https://github.com/tudorjnu/comp341):
 
 ```
-git clone git@github.com:tudorjnu/comp341.git
+git clone https://github.com/tudorjnu/comp341.git
 ```
 
 Try to play with different models for example by using the template provided (`hello.py`) and load different models and run them. Furthermore, you can try to create your own model by combining bodies together with joints. 
